@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Linq;
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -24,6 +25,11 @@
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
                     <li>@Html.ActionLink("Login", "Login", "Account")</li>
                     <li>@Html.ActionLink("Связаться", "Contact", "Home")</li>
+                    @if (Context.Request.Cookies[".AspNet.ApplicationCookie"]!=null)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
+
                 </ul>
             </div>
         </div>
