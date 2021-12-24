@@ -1,0 +1,57 @@
+﻿@model CardFile.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div>
+    <h2>Registration</h2>
+    <hr />
+    @Html.ValidationSummary(false)
+
+    <div>
+        Email
+        <div>
+            @Html.EditorFor(model => model.Email)
+        </div>
+    </div>
+
+    <div>
+        Name
+        <div>
+            @Html.EditorFor(model => model.Name)
+        </div>
+    </div>
+    <div>
+        Surname
+        <div>
+            @Html.EditorFor(model => model.Surname)
+        </div>
+    </div>
+    <div>
+        Password
+        <div>
+            @Html.EditorFor(model => model.Password)
+        </div>
+    </div>
+
+    <div>
+        Confirm Password
+        <div>
+            @Html.EditorFor(model => model.ConfirmPassword)
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <input type="submit" value="Register" />
+        </div>
+    </div>
+</div>
+}
+
+
